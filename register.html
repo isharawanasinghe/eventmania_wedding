@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+        <!-- ========== Start BoosrapLink ========== -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    
+        <!-- ========== End BoosrapLink ========== -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        a:hover{
+            background-color:#ffd700;
+        }
+        .navbar{
+            position:fixed !important;
+            width:100% !important;
+            z-index: 1000000 !important;
+            top:0 !important;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lightyellow;
+        }
+        header {
+            background-color: #333;
+            font-family:Cursive;
+            margin: 0;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+        }
+        .container1{
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        #event-details {
+            flex: 1;
+        }
+        #event-details img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        #registration-form {
+            flex: 1;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: lightyellow;
+        }
+        .btn{
+                border-radius: 16px !important;
+                font-size: 16px !important; 
+
+            }
+    </style>
+</head>
+<body>  <!-- ========== Start navigationBar ========== -->
+    <div class="row">
+        <div class="col-md-12">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+            <div class="container-fluid text01">
+              <div class="navbar-brand fw-bolder" href="Home.html"><img src="Logo/logoname.png" height="30px" width="50%"></div>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item px-2">
+                    <a class="nav-link active" aria-current="page" href="Home.html">Home</a>
+                  </li>
+                  <!-- ========== Start Navbar dropdown ========== -->
+                  
+                  
+                  
+    
+                  <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Events
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="BUSINESS.html">BUSINESS</a></li>
+                      <li><a class="dropdown-item" href="wedding_N.html">WEDDING</a></li>
+                      
+                     </ul>
+                  </li>
+    
+                  <!-- ========== End Navbar dropdown ========== -->
+    
+    
+    
+    
+                  <li class="nav-item px-2">
+                    <a class="nav-link active" href="contact.html">contact</a>
+                  </li>
+                  
+                  <li class="nav-item px-3">
+                    <a class="nav-link active btn btn-primary btnrad pe-1" href="register.html">Registration</a>
+                  </li>
+                  <li class="nav-item px-3">
+                    <a class="nav-link active btn btn-primary btnrad ps-1" href="Loging/index.html">Login</a>
+                  </li>
+                  
+                  
+                </ul>
+              </div>
+            </div>
+          </nav>
+          </div>
+        </div>
+    
+        <!-- ========== End navigationBar ========== -->
+    
+    <main>
+        <div class="container1 py-5">
+            <section id="event-details">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.YbezccBdsoQv2wX1QpyeOAHaLD?rs=1&pid=ImgDetMain" alt="Description of Image" width="600" height="1000">
+                <p></p>
+            </section>
+            <section id="registration-form">
+                <h2>Register Now</h2>
+                <form action="submit_registration" method="POST">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    
+                    <label for="company">Company/Organization:</label>
+                    <input type="text" id="company" name="company">
+                    
+                    <label for="job-title">Job Title:</label>
+                    <input type="text" id="job-title" name="job-title">
+                    
+                    <label for="ticket-type">Ticket Type:</label>
+                    <select id="ticket-type" name="ticket-type" required>
+                        <option value="general">General Admission</option>
+                        <option value="vip">VIP</option>
+                    </select>
+                    
+                    <label for="tickets">Number of Tickets:</label>
+                    <input type="number" id="tickets" name="tickets" min="1" required>
+                    
+                    <label for="requests">Special Requests:</label>
+                    <textarea id="requests" name="requests"></textarea>
+                    
+                    <button type="submit">Register</button>
+                </form>
+            </section>
+        </div>
+        <section id="confirmation">
+            <h2>Thank You for Registering!</h2>
+        </section>
+    </main>
+    <!-- ========== Start footer ========== -->
+
+
+
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#212529" fill-opacity="1"
+      d="M0,224L34.3,229.3C68.6,235,137,245,206,256C274.3,267,343,277,411,272C480,267,549,245,617,213.3C685.7,181,754,139,823,149.3C891.4,160,960,224,1029,245.3C1097.1,267,1166,245,1234,229.3C1302.9,213,1371,203,1406,197.3L1440,192L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+    </path>
+  </svg>
+  <footer class="py-4 text-light bg-dark">
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="Logo/white.png" height="100px" width="50%">
+          <h2 class=""> Event<span style="color: yellow;">Mania</span> </h2>
+          <p class="">To be the leading innovator in creating unforgettable event experiences worldwide.
+          </p>
+         
+        </div>
+        <div class="col-md-8">
+          <h2 class=""> YOUR PARTNER IN EVENT MANAGEMENT </h2>
+          <p class="">To deliver exceptional and customized events that exceed client expectations through
+            creativity, professionalism, and meticulous planning. </p>
+        </div>
+      </div>
+      <div class="row py-2">
+        <div class="col-md-4">
+          <div class="">
+            <i class="bi bi-facebook h2 pe-4"></i>
+            <i class="bi bi-github h2 pe-4"></i>
+            <i class="bi bi-instagram h2 pe-4"></i>
+            <i class="bi bi-linkedin h2 pe-4"></i>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h4> USEFUL LINKS </h4>
+          <div class="row">
+            <div class="col-6">
+              <p> Home </p>
+              <p> About </p>
+              <p> Event </p>
+            </div>
+            <div class="col-6">
+              <p> Contact </p>
+              <p> wedding </p>
+              <p> other </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h4> OUR STORE </h4>
+          <address class="m-0 "> 444 S.Cedros Ave, <br>
+            Solana Beach, California
+          </address>
+          <p class="p-0 m-0"> 0771545121 </p>
+          <a href="mailto:abcd@company.com">abcd@company.com</a>
+        </div>
+      </div>
+  
+    </div>
+  
+  </footer>
+  
+  
+  
+  
+  <!-- ========== End footer ========== -->
+  
+</body>
+</html>
